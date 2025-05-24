@@ -143,7 +143,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center px-6">
+      <section id="home" className="min-h-screen flex items-center justify-center px-6 pt-24">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Profile Photo - Left Side */}
