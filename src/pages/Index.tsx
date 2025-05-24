@@ -147,7 +147,7 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Profile Photo - Left Side */}
-            <div className="flex justify-center md:justify-end animate-fade-in">
+            <div className="flex justify-center items-center animate-fade-in">
               <Avatar className="w-64 h-64 ring-4 ring-primary/20">
                 <AvatarImage 
                   src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=400&fit=crop&crop=face" 
