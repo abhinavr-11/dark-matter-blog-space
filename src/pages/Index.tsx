@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Github, Linkedin, Mail, FileText, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -107,16 +108,45 @@ const Index = () => {
 
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center px-6">
-        <div className="text-center animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="gradient-text">Research</span> & 
-            <br />
-            <span className="text-foreground">Innovation</span>
+        <div className="text-center animate-fade-in max-w-4xl mx-auto">
+          {/* Profile Photo */}
+          <div className="mb-8">
+            <Avatar className="w-32 h-32 mx-auto mb-6 ring-4 ring-primary/20">
+              <AvatarImage 
+                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=400&fit=crop&crop=face" 
+                alt="Your Name" 
+              />
+              <AvatarFallback className="text-2xl">YN</AvatarFallback>
+            </Avatar>
+          </div>
+
+          {/* Name and Title */}
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            <span className="gradient-text">Your Name</span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            PhD Student in Computer Science exploring the intersection of 
-            machine learning, quantum computing, and climate science.
-          </p>
+          <h2 className="text-xl md:text-2xl text-muted-foreground mb-6">
+            PhD Student in Computer Science
+          </h2>
+
+          {/* Brief Description */}
+          <div className="max-w-2xl mx-auto mb-8">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              I'm a passionate researcher exploring the intersection of machine learning, 
+              quantum computing, and climate science. Currently pursuing my PhD, I focus 
+              on developing innovative computational methods to address complex real-world challenges.
+            </p>
+          </div>
+
+          {/* Research Areas */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {["Machine Learning", "Quantum Computing", "Climate Science", "Deep Learning"].map((area) => (
+              <Badge key={area} variant="secondary" className="glass px-4 py-2">
+                {area}
+              </Badge>
+            ))}
+          </div>
+
+          {/* Social Links */}
           <div className="flex justify-center space-x-4 mb-12">
             <Button variant="outline" size="icon" className="glass">
               <Github className="h-5 w-5" />
@@ -131,6 +161,8 @@ const Index = () => {
               <FileText className="h-5 w-5" />
             </Button>
           </div>
+
+          {/* Scroll Indicator */}
           <Button 
             onClick={() => scrollToSection("about")} 
             variant="ghost" 
